@@ -8,43 +8,48 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    private float coyoteTimeElapsed = 0; // resets after jumping
 
+    public CharacterState currentCharacterState = CharacterState.idle;
+    public CharacterState previousCharacterState = CharacterState.idle;
+
+    [Header("Dash")]
+    public float dashDistance;
+    public float dashTime;
+    //variables for dashing mechanics
+    private bool DASHING; // if we are in the state of dashing
+    private bool hadDashed; //if we had already dashed before value is reset
+    
+    private float dashElapsedTime = 0;
+
+    [Header("Wall Jumps")]
+    //wall jump varibales
+    private int currentWallJumps;
+    public int maxWallJumps = 2;
+
+    private bool FALLING = false;
+    
+    [Header("Jumping & Physics")]
+    public float fallTime;
+    public float terminalVelocity, apexTime, apexHeight;
+    public float coyoteTime;
+    private float gravity;
+    //is ground variables
+    public LayerMask solidGround;//what layers act as the ground
+    public Vector2 boxSize;//rough bottom hitbox
+    
     //acceleration and deceleration are both positive terms
     public float acceleration, deceleration;
     private bool LEFT = false, RIGHT = false, JUMPED = false;
     private Vector2 playerInput;
     public float maxSpeed;
 
-    private float coyoteTimeElapsed = 0; // resets after jumping
 
-    public CharacterState currentCharacterState = CharacterState.idle;
-    public CharacterState previousCharacterState = CharacterState.idle;
-
-
-    //variables for dashing mechanics
-    private bool DASHING; // if we are in the state of dashing
-    private bool hadDashed; //if we had already dashed before value is reset
-    public float dashDistance, dashTime;
-    private float dashElapsedTime = 0;
-
-    //wall jump varibales
-    private int currentWallJumps;
-    public int maxWallJumps = 2;
-
-    private bool FALLING = false;
-
-    private float gravity;
-    public float terminalVelocity, apexTime, apexHeight;
-    public float fallTime;
-    public float coyoteTime;
-    
-
+    [Header("Player Stats")]
+    public int MAX_HEALTH = 10;
     public int currentHealth = 10;
-
-    //is ground variables
-    public LayerMask solidGround;//what layers act as the ground
-    public Vector2 boxSize;//rough bottom hitbox
-
+    public Transform startingPos;
+    
 
     public enum CharacterState
     {
@@ -59,6 +64,8 @@ public class PlayerController : MonoBehaviour
     private FacingDirection currentFacingDirection = FacingDirection.right;
     private Rigidbody2D rb;
 
+
+
     void Start()
     {
         currentWallJumps = 0;
@@ -66,6 +73,7 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
+    private bool respawning = false;
     void Update()
     {
         //Get player input
@@ -82,6 +90,10 @@ public class PlayerController : MonoBehaviour
         if (IsDead())//if our character is dead then we don't need to look at anything else. 
         {
             currentCharacterState = CharacterState.die;
+        }else if (respawning)
+        {
+            currentCharacterState = CharacterState.idle;
+            respawning = false;
         }
         
         switch (currentCharacterState)
@@ -270,7 +282,6 @@ public class PlayerController : MonoBehaviour
         return direction;
     }
 
-
     private void MovementUpdate(Vector2 playerInput)
     {
         //JUMP - this is up here and not in the fixed update because the change happens in the frame not the , plus its an instant change not a change over time
@@ -280,7 +291,7 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, initalJumpVelocoty);
         }
 
-        Debug.Log(playerInput);
+        //Debug.Log(playerInput);
 
         //horizontal movement
         RIGHT = playerInput.x > 0;
@@ -306,8 +317,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-
         //******************************************** DASH
         dashElapsedTime += Time.fixedDeltaTime;
         //stop dash if either the elasped time is the dash time OR if they hit a wall
@@ -378,7 +387,6 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-
     public bool IsGrounded()
     {
         return Physics2D.BoxCast(transform.position, boxSize, 0f, -transform.up, 0.5f, solidGround) && rb.linearVelocity.y < 0.01f;
@@ -387,7 +395,16 @@ public class PlayerController : MonoBehaviour
     //referenced in the animator
     public void OnAnimationDeathCompleet()
     {
-        gameObject.SetActive(false);
+        if (Checkpoint.lastCheckpoint != null) 
+            transform.position = Checkpoint.lastCheckpoint.transform.position;
+        else
+            transform.position = startingPos.position;
+
+        currentHealth = MAX_HEALTH;
+        currentCharacterState = CharacterState.walk;
+        
+        
+        //gameObject.SetActive(false);
     }
 
     public FacingDirection GetFacingDirection()

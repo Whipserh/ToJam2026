@@ -33,7 +33,7 @@ public class PlayerVisuals : MonoBehaviour
         VisualsUpdate();
     }
 
-    //It is not recommended to make changes to the functionality of this code for the W10 journal.
+    
     private void VisualsUpdate()
     {
         /**
@@ -65,7 +65,7 @@ public class PlayerVisuals : MonoBehaviour
                     animator.CrossFade("Die", 0f);
                     break;
             }
-        }
+        }//end if
 
 
         switch (playerController.GetFacingDirection())
