@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DigWarrior_idle
+  m_Name: MouseIdle
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -24,14 +24,12 @@ AnimationClip:
       value: {fileID: 4210282894916951164, guid: 3cc964894af251a4cb0a4bf9bfe8e4e9, type: 3}
     - time: 0.2
       value: {fileID: -3638007018927035874, guid: 3cc964894af251a4cb0a4bf9bfe8e4e9, type: 3}
-    - time: 0.4
+    - time: 0.46666667
       value: {fileID: 6318091622971409641, guid: 3cc964894af251a4cb0a4bf9bfe8e4e9, type: 3}
-    - time: 0.6333333
+    - time: 0.8
       value: {fileID: 1017572883481423519, guid: 3cc964894af251a4cb0a4bf9bfe8e4e9, type: 3}
-    - time: 0.8333333
-      value: {fileID: 8277722200329896829, guid: 3cc964894af251a4cb0a4bf9bfe8e4e9, type: 3}
     - time: 1
-      value: {fileID: 4210282894916951164, guid: 3cc964894af251a4cb0a4bf9bfe8e4e9, type: 3}
+      value: {fileID: 8277722200329896829, guid: 3cc964894af251a4cb0a4bf9bfe8e4e9, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -59,7 +57,6 @@ AnimationClip:
     - {fileID: 6318091622971409641, guid: 3cc964894af251a4cb0a4bf9bfe8e4e9, type: 3}
     - {fileID: 1017572883481423519, guid: 3cc964894af251a4cb0a4bf9bfe8e4e9, type: 3}
     - {fileID: 8277722200329896829, guid: 3cc964894af251a4cb0a4bf9bfe8e4e9, type: 3}
-    - {fileID: 4210282894916951164, guid: 3cc964894af251a4cb0a4bf9bfe8e4e9, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
