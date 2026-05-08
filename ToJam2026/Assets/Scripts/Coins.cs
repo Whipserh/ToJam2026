@@ -21,7 +21,7 @@ public class Coins : MonoBehaviour
         Debug.Log("Object entered: " + collision.gameObject.layer);
 
         // Example: Check by tag
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.CompareTag("Player"))
         {
             UIController.Instance.addcoin();
             //UIController.Instance.coins ++;
