@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0305a67d7eab1d34fa4937996b238d07
+=======
+guid: 502d56196caadb740b054eeb12e76820
+>>>>>>> enemy
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -37,7 +41,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
     filterMode: 0
+=======
+    filterMode: 1
+>>>>>>> enemy
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +59,11 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   spritePixelsToUnits: 16
+=======
+  spritePixelsToUnits: 100
+>>>>>>> enemy
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,11 +116,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+<<<<<<< HEAD
         y: 32
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+=======
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+>>>>>>> enemy
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -121,6 +141,7 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< HEAD
     - serializedVersion: 2
       name: woodtiles_1
       rect:
@@ -473,11 +494,17 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+=======
+>>>>>>> enemy
     outline: []
     customData: 
     physicsShape: []
     bones: []
+<<<<<<< HEAD
     spriteID: 50d1e76fd06a4f848b14ed7f996238e1
+=======
+    spriteID: 
+>>>>>>> enemy
     internalID: 0
     vertices: []
     indices: 
@@ -485,6 +512,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
+<<<<<<< HEAD
       entries:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
@@ -506,6 +534,11 @@ TextureImporter:
       woodtiles_7: -252941600
       woodtiles_8: 1406290487
       woodtiles_9: 1370783998
+=======
+      entries: []
+    nameFileIdTable:
+      woodtiles_0: -7960262199575138319
+>>>>>>> enemy
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
