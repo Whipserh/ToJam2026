@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fbb53c7383ce574b9e39e3ba2e3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rat
-  defultMood: 1
+  defultMood: 0
   smarts: 1
   leftwalldecOBJ: {fileID: 288486879}
   leftedgedecOBJ: {fileID: 1078250558}
