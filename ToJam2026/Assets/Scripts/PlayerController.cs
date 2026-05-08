@@ -68,6 +68,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //Get player input
+        
+
+
+        #region Character State
         //****************************************************************************Character state
 
         //save the previous character state
@@ -135,10 +140,11 @@ public class PlayerController : MonoBehaviour
             JUMPED = false; //reset the jump when the player touches the ground
         }
 
-
+        #endregion
+        #region facing Direction
         //****************************************************************************Facing Direction
 
-        if(!DASHING)
+        if (!DASHING)
         //change the direction that the player is facing.
         if (Input.GetKey(KeyCode.D))
         {
@@ -147,6 +153,8 @@ public class PlayerController : MonoBehaviour
         {
             currentFacingDirection = FacingDirection.left;
         }
+        #endregion
+        #region Dash Controls
         //****************************************************************************Dash controls
         if (Input.GetMouseButtonDown(0)  && dashLegible()) //can only DASHING if we aren't dashing
         {
@@ -155,7 +163,8 @@ public class PlayerController : MonoBehaviour
             dashElapsedTime = 0;
             DASHING = true;
         }
-
+        #endregion
+        #region Movement Controls
         //*****************************************************************************Movement co
         //The input from the player needs to be determined and then passed
         //in the to the MovementUpdate which should manage the actual
@@ -185,9 +194,9 @@ public class PlayerController : MonoBehaviour
         MovementUpdate(playerInput);
 
         coyoteTimeElapsed+=Time.deltaTime;
+        #endregion
 
-        
-    }
+    }//end update
 
 
     public bool legibleJump()
@@ -228,9 +237,6 @@ public class PlayerController : MonoBehaviour
         }
         return false;
     }
-
-     
-
 
     public bool dashLegible()
     {
