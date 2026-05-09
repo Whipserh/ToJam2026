@@ -188,12 +188,12 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.D))
             {
-                playerInput.x++;
+                playerInput.x += 1;
             }
 
             if (Input.GetKey(KeyCode.A))
             {
-                playerInput.x--;
+                playerInput.x -= 1;
             }
 
             //Jump
@@ -344,12 +344,12 @@ public class PlayerController : MonoBehaviour
         if (RIGHT)
         {
             //Debug.Log("right");
-            rb.linearVelocity += Vector2.right * Time.fixedDeltaTime * acceleration;
+            rb.linearVelocity += Vector2.right * Time.fixedDeltaTime * acceleration * 20;
         }
         else if (LEFT)
         {
             //Debug.Log("left");
-            rb.linearVelocity += Vector2.left * Time.fixedDeltaTime * acceleration;
+            rb.linearVelocity += Vector2.left * Time.fixedDeltaTime * acceleration * 20;
         }
         else // if we aren't moving then we should slow down
         {
