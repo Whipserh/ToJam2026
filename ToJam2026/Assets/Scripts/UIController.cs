@@ -24,7 +24,7 @@ public class UIController : MonoBehaviour
     void Start()
     {
         coins = 0;
-        maxCoins = 152;//better in the future
+        maxCoins = 191;//better in the future
         coinCounter.text = "Coins: " + coins + "/" + maxCoins;
     }
 
