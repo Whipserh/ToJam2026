@@ -88,6 +88,12 @@ public class PlayerController : MonoBehaviour
         myCollider = GetComponent<BoxCollider2D>();
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawCube((Vector2)transform.position + myCollider.offset, myCollider.size);
+    }
+
     private bool respawning = false;
     void Update()
     {
@@ -212,15 +218,15 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.S))
             {
-                myCollider.size = new Vector2(1.0f, 0.4f);
-                myCollider.offset = new Vector2(0.0f, -0.3f);
+                myCollider.size = new Vector2(1.0f, 0.5f);
+                myCollider.offset = new Vector2(0.0f, -0.25f);
             }
             else
             {
                 if (!IsUnder())
                 {
-                    myCollider.size = new Vector2(1.0f, 1.0f);
-                    myCollider.offset = new Vector2(0.0f, 0.0f);
+                    myCollider.size = new Vector2(1.0f, 1.11f);
+                    myCollider.offset = new Vector2(0.0f, 0.05f);
                 }
             }
 

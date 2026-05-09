@@ -30,6 +30,8 @@ public class Rat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         //Triggers
         leftwalldec = leftwalldecOBJ.isinside;
         leftedgedec = leftedgedecOBJ.isinside;
