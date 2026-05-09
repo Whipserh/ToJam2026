@@ -452,7 +452,7 @@ public class PlayerController : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        currentHealth -= damage * 0.5f;
+        currentHealth -= damage * 1f;
 
         if (currentHealth < 0)
         {
