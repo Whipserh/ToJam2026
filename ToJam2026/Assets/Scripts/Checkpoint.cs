@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
+    [SerializeField] private Animator _animator;
     public static Checkpoint lastCheckpointS;
     public static GameObject lastCheckpoint;
-    public GameObject activeSprite;
+    //public GameObject activeSprite;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _animator = gameObject.GetComponent<Animator>();
         deactivateCheckpoint();
     }
 
@@ -18,12 +20,12 @@ public class Checkpoint : MonoBehaviour
     public void activateCheckpoint()
     {
         //turn off the last checkpoint
-        if (lastCheckpointS != null)
+        if (lastCheckpointS != null && lastCheckpoint!= this)
             lastCheckpointS.deactivateCheckpoint();
         else Debug.Log("no last checkpoint");
 
-        
-        activeSprite.SetActive(true);
+
+        _animator.SetBool("Active", true);//activeSprite.SetActive(true);
         lastCheckpointS = this;
         lastCheckpoint = gameObject;
         
@@ -33,7 +35,7 @@ public class Checkpoint : MonoBehaviour
     public void deactivateCheckpoint()
     {
         //turns off the active sprite
-        activeSprite.SetActive(false);
+        _animator.SetBool("Active", false); //activeSprite.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
