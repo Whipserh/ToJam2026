@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Reporting;
 using UnityEngine;
 using static PlayerController;
 
@@ -33,6 +34,34 @@ public class PlayerVisuals : MonoBehaviour
         VisualsUpdate();
     }
 
+    public GameObject heart1, heart2, heart3;
+    public void updateHealthUI(int health)
+    {
+        health = Mathf.Clamp(health, 0, 3);
+        switch (health)
+        {
+            case 0:
+                heart1.SetActive(false);
+                heart2.SetActive(false);
+                heart3.SetActive(false);
+                break;
+            case 1:
+                heart1.SetActive(true);
+                heart2.SetActive(false);
+                heart3.SetActive(false);
+                break;
+            case 2:
+                heart1.SetActive(true);
+                heart2.SetActive(true);
+                heart3.SetActive(false);
+                break;
+            case 3:
+                heart1.SetActive(true);
+                heart2.SetActive(true);
+                heart3.SetActive(true);
+                break;
+        }
+    }
     
     private void VisualsUpdate()
     {
