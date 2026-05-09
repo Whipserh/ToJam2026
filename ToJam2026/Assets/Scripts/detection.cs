@@ -28,7 +28,7 @@ public class detection : MonoBehaviour
         }
         else if (collision.gameObject.layer == layercheck)
         {
-            isinside = true;
+            isinside = false;
         }
         
     }
@@ -44,7 +44,7 @@ public class detection : MonoBehaviour
         }
         else if (collision.gameObject.layer == layercheck)
         {
-            isinside = false;
+            isinside = true;
         }
     }
 }

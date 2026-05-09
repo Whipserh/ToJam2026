@@ -16,7 +16,7 @@ public class Spike : MonoBehaviour
         // Example: Check by tag
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerController.Instance.currentHealth -= 10;
+            PlayerController.Instance.takeDamage(99);
         }
     }
 }

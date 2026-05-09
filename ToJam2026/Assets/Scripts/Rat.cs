@@ -75,7 +75,7 @@ public class Rat : MonoBehaviour
                     waiting += Time.deltaTime;
                 }
 
-                if (waiting >= 1)
+                if (waiting >= 0.1)
                 {
                     waiting = 0;
                     mood = defultMood;
@@ -119,7 +119,7 @@ public class Rat : MonoBehaviour
                             waiting += Time.deltaTime;
                         }
 
-                        if (waiting >= 1)
+                        if (waiting >= 0.1)
                         {
                             waiting = 0;
                             mood = defultMood;
@@ -162,7 +162,7 @@ public class Rat : MonoBehaviour
         print("Something is here");
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerController.Instance.currentHealth -= 10;
+            PlayerController.Instance.takeDamage(1);
         }
     }
 

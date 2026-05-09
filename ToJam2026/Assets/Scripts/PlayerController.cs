@@ -47,10 +47,10 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("Player Stats")]
-    public int MAX_HEALTH = 10;
-    public int currentHealth = 10;
+    float MAX_HEALTH = 3;
+    float currentHealth = 3;
     public Transform startingPos;
-
+    public PlayerVisuals visuals;
 
     public static PlayerController Instance { get; private set; }
 
@@ -434,13 +434,25 @@ public class PlayerController : MonoBehaviour
 
         currentHealth = MAX_HEALTH;
         currentCharacterState = CharacterState.walk;
-        
-        
+        visuals.updateHealthUI((int)currentHealth);
+
         //gameObject.SetActive(false);
     }
 
     public FacingDirection GetFacingDirection()
     {
         return currentFacingDirection;
+    }
+
+    public void takeDamage(int damage)
+    {
+        currentHealth -= damage * 0.5f;
+
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
+        print("Current health: " + currentHealth);
+        visuals.updateHealthUI(currentHealth);
     }
 }
