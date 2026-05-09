@@ -154,4 +154,13 @@ public class Rat : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        print("Something is here");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerController.Instance.currentHealth -= 10;
+        }
+    }
+
 }

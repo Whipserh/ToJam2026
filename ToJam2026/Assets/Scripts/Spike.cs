@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    public PlayerController controller;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,7 +16,7 @@ public class Spike : MonoBehaviour
         // Example: Check by tag
         if (collision.gameObject.CompareTag("Player"))
         {
-            controller.currentHealth -= 10;
+            PlayerController.Instance.currentHealth -= 10;
         }
     }
 }
