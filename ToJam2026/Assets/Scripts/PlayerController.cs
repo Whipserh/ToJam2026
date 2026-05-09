@@ -50,7 +50,20 @@ public class PlayerController : MonoBehaviour
     public int MAX_HEALTH = 10;
     public int currentHealth = 10;
     public Transform startingPos;
-    
+
+
+    public static PlayerController Instance { get; private set; }
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
     public enum CharacterState
     {
@@ -170,7 +183,7 @@ public class PlayerController : MonoBehaviour
         #endregion
         #region Dash Controls
         //****************************************************************************Dash controls
-        if (Input.GetMouseButtonDown(0)  && dashLegible()) //can only DASHING if we aren't dashing
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashLegible()) //can only DASHING if we aren't dashing
         {
             hadDashed = true;
             Debug.Log("Dash");

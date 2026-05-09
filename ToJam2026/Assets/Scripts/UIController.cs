@@ -5,6 +5,7 @@ public class UIController : MonoBehaviour
 {
     public TextMeshProUGUI coinCounter;
     public int coins;
+    int maxCoins;
 
 
     public static UIController Instance { get; private set; }
@@ -23,13 +24,14 @@ public class UIController : MonoBehaviour
     void Start()
     {
         coins = 0;
-        coinCounter.text = "Coins: " + coins + "/99";
+        maxCoins = 114;//better in the future
+        coinCounter.text = "Coins: " + coins + "/" + maxCoins;
     }
 
     // Update is called once per frame
     public void addcoin()
     {
         coins++;
-        coinCounter.text = "Coins: " + coins + "/99";
+        coinCounter.text = "Coins: " + coins + "/" + maxCoins;
     }
 }

@@ -1,3 +1,4 @@
+using Unity.Collections;
 using UnityEngine;
 using static PlayerController;
 
@@ -7,6 +8,7 @@ public class Rat : MonoBehaviour
     Vector2 lastspot;
     public int defultMood; //0 for don't move, 1 for moving
     public int smarts; //0 = dumb, 1 = smart //Dumb runs off and doesn't go back, smart doesn't run off and does go back
+    public float speed;
     int FacingDirection; //-1 = left, 1 = right
     float waiting;
 
@@ -40,34 +42,34 @@ public class Rat : MonoBehaviour
         {
             mood = 2;
         }
-
-        if (smarts == 0)
-        {
-            if (mood == 0)
-            {
+        switch (smarts) { 
+            case 0://dumb rat -> will run off edge
+            switch (mood) {
+                    case 0:
                 waiting += Time.deltaTime;
                 if (waiting >= 1)
                 {
                     turnAround();
                     waiting = 0;
                 }
-            }
-            if (mood == 1)
-            {
-                transform.Translate(Vector3.right * 3f * FacingDirection * Time.deltaTime);
+                        break;
+                    case 1:
+            
+                transform.Translate(Vector3.right * speed * FacingDirection * Time.deltaTime);
                 if (leftwalldec)
                 {
-                    waiting += Time.deltaTime;
-                }
-                if (waiting >= 1)
-                {
                     turnAround();
-                    waiting = 0;
+                    //waiting += Time.deltaTime;
                 }
-            }
-            if (mood == 2)
-            {
-                transform.Translate(Vector3.right * 5f * FacingDirection * Time.deltaTime);
+                //if (waiting >= 1)
+                {
+                    //turnAround();
+                    //waiting = 0;
+                }
+                        break;
+                    case 2:
+            
+                transform.Translate(Vector3.right * speed * 1.5f * FacingDirection * Time.deltaTime);
                 if (!leftplayerdec)
                 {
                     waiting += Time.deltaTime;
@@ -78,52 +80,53 @@ public class Rat : MonoBehaviour
                     waiting = 0;
                     mood = defultMood;
                 }
-            }
-        }
-        if (smarts == 1)
-        {
-            if (mood == 0)
-            {
-                waiting += Time.deltaTime;
-                if (waiting >= 1)
-                {
-                    turnAround();
-                    waiting = 0;
-                }
-            }
-            if (mood == 1)
-            {
-                if (leftedgedec == true && leftwalldec == false) //!leftwalldec || 
-                {
-                    transform.Translate(Vector3.right * 3f * FacingDirection * Time.deltaTime);
-                }
-                else
-                {
-                    waiting += Time.deltaTime;
-                }
-                if (waiting >= 1)
-                {
-                    turnAround();
-                    waiting = 0;
-                }
-            }
-            if (mood == 2)
-            {
-                if (leftedgedec == true && leftwalldec == false)
-                {
-                    transform.Translate(Vector3.right * 5f * FacingDirection * Time.deltaTime);
-                }
-                if (!leftplayerdec)
-                {
-                    waiting += Time.deltaTime;
-                }
+                        break;
+            }//inner switch
+                break;
+        case 1://smart rat will check to see if there is an edge before walking
+                switch (mood){
+                    case 0:
+                        waiting += Time.deltaTime;
+                        if (waiting >= 1)
+                        {
+                            turnAround();
+                            waiting = 0;
+                        }
+                        break;
+                    case 1:
+                        if (leftedgedec == true && leftwalldec == false) //!leftwalldec || 
+                        {
+                            transform.Translate(Vector3.right * speed * FacingDirection * Time.deltaTime);
+                        }
+                        else
+                        {
+                            turnAround();
+                            //waiting += Time.deltaTime;
+                        }
+                        //if (waiting >= 1)
+                        {
+                            //turnAround();
+                            //waiting = 0;
+                        }
+                        break;
+                    case 2:
+                        if (leftedgedec == true && leftwalldec == false)
+                        {
+                            transform.Translate(Vector3.right * speed * 1.5f * FacingDirection * Time.deltaTime);
+                        }
+                        if (!leftplayerdec)
+                        {
+                            waiting += Time.deltaTime;
+                        }
 
-                if (waiting >= 1)
-                {
-                    waiting = 0;
-                    mood = defultMood;
-                }
+                        if (waiting >= 1)
+                        {
+                            waiting = 0;
+                            mood = defultMood;
+                        }
+                        break;
             }
+                break;
         }
 
 
@@ -153,5 +156,16 @@ public class Rat : MonoBehaviour
             FacingDirection = -1;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        print("Something is here");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerController.Instance.currentHealth -= 10;
+        }
+    }
+
+
 
 }
