@@ -1,3 +1,4 @@
+using Unity.Collections;
 using UnityEngine;
 using static PlayerController;
 
@@ -7,6 +8,7 @@ public class Rat : MonoBehaviour
     Vector2 lastspot;
     public int defultMood; //0 for don't move, 1 for moving
     public int smarts; //0 = dumb, 1 = smart //Dumb runs off and doesn't go back, smart doesn't run off and does go back
+    public float speed;
     int FacingDirection; //-1 = left, 1 = right
     float waiting;
 
@@ -54,20 +56,21 @@ public class Rat : MonoBehaviour
             }
             if (mood == 1)
             {
-                transform.Translate(Vector3.right * 3f * FacingDirection * Time.deltaTime);
+                transform.Translate(Vector3.right * speed * FacingDirection * Time.deltaTime);
                 if (leftwalldec)
                 {
-                    waiting += Time.deltaTime;
-                }
-                if (waiting >= 1)
-                {
                     turnAround();
-                    waiting = 0;
+                    //waiting += Time.deltaTime;
+                }
+                //if (waiting >= 1)
+                {
+                    //turnAround();
+                    //waiting = 0;
                 }
             }
             if (mood == 2)
             {
-                transform.Translate(Vector3.right * 5f * FacingDirection * Time.deltaTime);
+                transform.Translate(Vector3.right * speed * 1.5f * FacingDirection * Time.deltaTime);
                 if (!leftplayerdec)
                 {
                     waiting += Time.deltaTime;
@@ -95,23 +98,24 @@ public class Rat : MonoBehaviour
             {
                 if (leftedgedec == true && leftwalldec == false) //!leftwalldec || 
                 {
-                    transform.Translate(Vector3.right * 3f * FacingDirection * Time.deltaTime);
+                    transform.Translate(Vector3.right * speed * FacingDirection * Time.deltaTime);
                 }
                 else
                 {
-                    waiting += Time.deltaTime;
-                }
-                if (waiting >= 1)
-                {
                     turnAround();
-                    waiting = 0;
+                    //waiting += Time.deltaTime;
+                }
+                //if (waiting >= 1)
+                {
+                    //turnAround();
+                    //waiting = 0;
                 }
             }
             if (mood == 2)
             {
                 if (leftedgedec == true && leftwalldec == false)
                 {
-                    transform.Translate(Vector3.right * 5f * FacingDirection * Time.deltaTime);
+                    transform.Translate(Vector3.right * speed * 1.5f * FacingDirection * Time.deltaTime);
                 }
                 if (!leftplayerdec)
                 {
