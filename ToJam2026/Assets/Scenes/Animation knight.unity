@@ -6150,7 +6150,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.375}
     oldSize: {x: 2, y: 2}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
@@ -6248,7 +6248,7 @@ MonoBehaviour:
   coyoteTime: 4
   solidGround:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 8
   boxSize: {x: 1.3333, y: 0.5}
   acceleration: 10
   deceleration: 4
