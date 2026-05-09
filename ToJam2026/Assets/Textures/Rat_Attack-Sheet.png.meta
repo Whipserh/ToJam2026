@@ -1,37 +1,28 @@
 fileFormatVersion: 2
-guid: b8d6280c2147fdb48970bf0c1626a264
+guid: e8fdd3d94e145ee4c866d460e18564d8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8514904351332854816
-    second: Jump-Sheet_0
+      213: 6266931509016373441
+    second: Rat_Attack-Sheet_0
   - first:
-      213: 6410117835993900320
-    second: Jump-Sheet_1
+      213: 3210687061333630676
+    second: Rat_Attack-Sheet_1
   - first:
-      213: 8778145040096701731
-    second: Jump-Sheet_2
+      213: -1504741790533723187
+    second: Rat_Attack-Sheet_2
   - first:
-      213: 2307569148452509018
-    second: Jump-Sheet_3
+      213: 9018924325488674765
+    second: Rat_Attack-Sheet_3
   - first:
-      213: 859979031330678828
-    second: Jump-Sheet_4
+      213: 946092360878882438
+    second: Rat_Attack-Sheet_4
   - first:
-      213: 3770386835238207479
-    second: Jump-Sheet_5
+      213: 5934518708527061412
+    second: Rat_Attack-Sheet_5
   - first:
-      213: -1144117658616818544
-    second: Jump-Sheet_6
-  - first:
-      213: -1055865424037605928
-    second: Jump-Sheet_7
-  - first:
-      213: -6380995540111236087
-    second: Jump-Sheet_8
-  - first:
-      213: 8795221733660068501
-    second: Jump-Sheet_9
+      213: -1901542499078368814
+    second: Rat_Attack-Sheet_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -64,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,221 +118,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jump-Sheet_0
+      name: Rat_Attack-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 0
-        width: 32
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02c6f95c4640b2670800000000000000
-      internalID: 8514904351332854816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 025efc6a53055f850800000000000000
-      internalID: 6410117835993900320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32d22d5c76c32d970800000000000000
-      internalID: 8778145040096701731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 48
+        width: 34
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a55992c1ae1260020800000000000000
-      internalID: 2307569148452509018
+      spriteID: 1c8af9af00d98f650800000000000000
+      internalID: 6266931509016373441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump-Sheet_4
+      name: Rat_Attack-Sheet_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 78
         y: 0
-        width: 32
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c28efb46f524feb00800000000000000
-      internalID: 859979031330678828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7ffbe2ca9da135430800000000000000
-      internalID: 3770386835238207479
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 48
+        width: 35
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 09494e02d074f10f0800000000000000
-      internalID: -1144117658616818544
+      spriteID: 4dedbbf0fd6ae8c20800000000000000
+      internalID: 3210687061333630676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump-Sheet_7
+      name: Rat_Attack-Sheet_2
       rect:
         serializedVersion: 2
-        x: 224
+        x: 145
         y: 0
-        width: 32
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8dd0f95bdffc851f0800000000000000
-      internalID: -1055865424037605928
+      spriteID: dcb5d8060551e1be0800000000000000
+      internalID: -1504741790533723187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump-Sheet_8
+      name: Rat_Attack-Sheet_3
       rect:
         serializedVersion: 2
-        x: 256
+        x: 211
         y: 0
-        width: 32
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6fa1adcda623feb40a9baad8092e54d0
-      internalID: -6380995540111236087
+      spriteID: dc7c1e4c3e7a92d70800000000000000
+      internalID: 9018924325488674765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump-Sheet_9
+      name: Rat_Attack-Sheet_4
       rect:
         serializedVersion: 2
-        x: 288
+        x: 278
         y: 0
-        width: 32
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 518ba33162eba2244a17af1b5da2dcfc
-      internalID: 8795221733660068501
+      spriteID: 68e75e65df1312d00800000000000000
+      internalID: 946092360878882438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_Attack-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a95aaea255ab5250800000000000000
+      internalID: 5934518708527061412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_Attack-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d110210c2d5c95e0800000000000000
+      internalID: -1901542499078368814
       vertices: []
       indices: 
       edges: []
@@ -350,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ebf583eaa54022e4d9c31152cebf92a8
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -358,20 +283,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Jump-Sheet_0: 8514904351332854816
-      Jump-Sheet_1: 6410117835993900320
-      Jump-Sheet_2: 8778145040096701731
-      Jump-Sheet_3: 2307569148452509018
-      Jump-Sheet_4: 859979031330678828
-      Jump-Sheet_5: 3770386835238207479
-      Jump-Sheet_6: -1144117658616818544
-      Jump-Sheet_7: -1055865424037605928
-      Jump-Sheet_8: -6380995540111236087
-      Jump-Sheet_9: 8795221733660068501
+      Rat_Attack-Sheet_0: 6266931509016373441
+      Rat_Attack-Sheet_1: 3210687061333630676
+      Rat_Attack-Sheet_2: -1504741790533723187
+      Rat_Attack-Sheet_3: 9018924325488674765
+      Rat_Attack-Sheet_4: 946092360878882438
+      Rat_Attack-Sheet_5: 5934518708527061412
+      Rat_Attack-Sheet_6: -1901542499078368814
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

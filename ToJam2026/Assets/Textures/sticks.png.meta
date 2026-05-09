@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-guid: 3cc964894af251a4cb0a4bf9bfe8e4e9
+guid: 972cf12584616bb4dbe1c7b5a48f8eb9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4210282894916951164
-    second: Mouse_Idle-Sheet_0
+      213: 6650738528677379693
+    second: sticks_0
   - first:
-      213: -3638007018927035874
-    second: Mouse_Idle-Sheet_1
-  - first:
-      213: 6318091622971409641
-    second: Mouse_Idle-Sheet_2
-  - first:
-      213: 1017572883481423519
-    second: Mouse_Idle-Sheet_3
-  - first:
-      213: 8277722200329896829
-    second: Mouse_Idle-Sheet_4
+      213: -3301283709267967565
+    second: sticks_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -112,111 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_0
+      name: sticks_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+        x: 1
+        y: 23
+        width: 62
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7c9d636cfded6a30800000000000000
-      internalID: 4210282894916951164
+      spriteID: d6eb1d7647b2c4c50800000000000000
+      internalID: 6650738528677379693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_1
+      name: sticks_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 1
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+        width: 62
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e1ae97a24e3338dc0800000000000000
-      internalID: -3638007018927035874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mouse_Idle-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e4059d3bde5ea750800000000000000
-      internalID: 6318091622971409641
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mouse_Idle-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f9eeafc65252f1e00800000000000000
-      internalID: 1017572883481423519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mouse_Idle-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d734704eb7060e270800000000000000
-      internalID: 8277722200329896829
+      spriteID: 3b18c4615fb7f22d0800000000000000
+      internalID: -3301283709267967565
       vertices: []
       indices: 
       edges: []
@@ -225,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1d345fe7e57c56548b6222386405cb61
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -233,15 +158,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.375},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Mouse_Idle-Sheet_0: 4210282894916951164
-      Mouse_Idle-Sheet_1: -3638007018927035874
-      Mouse_Idle-Sheet_2: 6318091622971409641
-      Mouse_Idle-Sheet_3: 1017572883481423519
-      Mouse_Idle-Sheet_4: 8277722200329896829
+      sticks_0: 6650738528677379693
+      sticks_1: -3301283709267967565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

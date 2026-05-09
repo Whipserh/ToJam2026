@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: 3cc964894af251a4cb0a4bf9bfe8e4e9
+guid: ef0fdac816ce8e346abcef2ea8c95381
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4210282894916951164
-    second: Mouse_Idle-Sheet_0
+      213: 7266986900128685613
+    second: Rat_Walk-Sheet_0
   - first:
-      213: -3638007018927035874
-    second: Mouse_Idle-Sheet_1
+      213: 8553636760443161500
+    second: Rat_Walk-Sheet_1
   - first:
-      213: 6318091622971409641
-    second: Mouse_Idle-Sheet_2
+      213: -3756373434754494046
+    second: Rat_Walk-Sheet_2
   - first:
-      213: 1017572883481423519
-    second: Mouse_Idle-Sheet_3
+      213: -1238110100052724995
+    second: Rat_Walk-Sheet_3
   - first:
-      213: 8277722200329896829
-    second: Mouse_Idle-Sheet_4
+      213: -7211068481596393291
+    second: Rat_Walk-Sheet_4
+  - first:
+      213: 3493115002071152281
+    second: Rat_Walk-Sheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -112,111 +115,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_0
+      name: Rat_Walk-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7c9d636cfded6a30800000000000000
-      internalID: 4210282894916951164
+      spriteID: d2e5691651689d460800000000000000
+      internalID: 7266986900128685613
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_1
+      name: Rat_Walk-Sheet_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e1ae97a24e3338dc0800000000000000
-      internalID: -3638007018927035874
+      spriteID: c9b00f3805f94b670800000000000000
+      internalID: 8553636760443161500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_2
+      name: Rat_Walk-Sheet_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e4059d3bde5ea750800000000000000
-      internalID: 6318091622971409641
+      spriteID: 2a19eb1634eaedbc0800000000000000
+      internalID: -3756373434754494046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_3
+      name: Rat_Walk-Sheet_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 0
-        width: 32
+        width: 34
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9eeafc65252f1e00800000000000000
-      internalID: 1017572883481423519
+      spriteID: df2b88d7c6951dee0800000000000000
+      internalID: -1238110100052724995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_4
+      name: Rat_Walk-Sheet_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 127
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d734704eb7060e270800000000000000
-      internalID: 8277722200329896829
+      spriteID: 5b87e6ffb632deb90800000000000000
+      internalID: -7211068481596393291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_Walk-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 996f90a46990a7030800000000000000
+      internalID: 3493115002071152281
       vertices: []
       indices: 
       edges: []
@@ -225,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1d345fe7e57c56548b6222386405cb61
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -233,15 +258,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.375},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Mouse_Idle-Sheet_0: 4210282894916951164
-      Mouse_Idle-Sheet_1: -3638007018927035874
-      Mouse_Idle-Sheet_2: 6318091622971409641
-      Mouse_Idle-Sheet_3: 1017572883481423519
-      Mouse_Idle-Sheet_4: 8277722200329896829
+      Rat_Walk-Sheet_0: 7266986900128685613
+      Rat_Walk-Sheet_1: 8553636760443161500
+      Rat_Walk-Sheet_2: -3756373434754494046
+      Rat_Walk-Sheet_3: -1238110100052724995
+      Rat_Walk-Sheet_4: -7211068481596393291
+      Rat_Walk-Sheet_5: 3493115002071152281
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

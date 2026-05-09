@@ -1,37 +1,25 @@
 fileFormatVersion: 2
-guid: 19c76432b55c814429b527dd62464e62
+guid: b62d3acd15222c14d9f21013d709514c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 625391328873610493
-    second: Jump_Sheet_0
+      213: -3338749442709606003
+    second: Coin_0
   - first:
-      213: 810941716983449303
-    second: Jump_Sheet_1
+      213: 5848064539680731454
+    second: Coin_1
   - first:
-      213: -8948618655135439775
-    second: Jump_Sheet_2
+      213: -2652133911391862278
+    second: Coin_2
   - first:
-      213: -5748837363989459845
-    second: Jump_Sheet_3
+      213: 5522397121026081838
+    second: Coin_3
   - first:
-      213: 7142556492405950414
-    second: Jump_Sheet_4
+      213: 4786861022352539597
+    second: Coin_4
   - first:
-      213: -6111433179025021030
-    second: Jump_Sheet_5
-  - first:
-      213: 2701165111973676790
-    second: Jump_Sheet_6
-  - first:
-      213: 1861033021071183211
-    second: Jump_Sheet_7
-  - first:
-      213: 3940377791074286827
-    second: Jump_Sheet_8
-  - first:
-      213: -2852514029522864642
-    second: Jump_Sheet_9
+      213: 5728404248119495573
+    second: Coin_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -64,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,221 +115,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jump_Sheet_0
+      name: Coin_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 0
         y: 0
-        width: 24
-        height: 23
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dfcfe13a916dda800800000000000000
-      internalID: 625391328873610493
+      spriteID: d81b24142116aa1d0800000000000000
+      internalID: -3338749442709606003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump_Sheet_1
+      name: Coin_1
       rect:
         serializedVersion: 2
-        x: 37
+        x: 16
         y: 0
-        width: 24
-        height: 19
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7d6085ee13b014b00800000000000000
-      internalID: 810941716983449303
+      spriteID: e317a37e6bf782150800000000000000
+      internalID: 5848064539680731454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump_Sheet_2
+      name: Coin_2
       rect:
         serializedVersion: 2
-        x: 101
-        y: 8
-        width: 23
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 164e736bebe10d380800000000000000
-      internalID: -8948618655135439775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump_Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 14
-        width: 21
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b7c4ae740e60830b0800000000000000
-      internalID: -5748837363989459845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump_Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 18
-        width: 21
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec7440679457f1360800000000000000
-      internalID: 7142556492405950414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump_Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 17
-        width: 20
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a976da747e3df2ba0800000000000000
-      internalID: -6111433179025021030
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump_Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 229
+        x: 32
         y: 0
-        width: 24
-        height: 23
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f68ed2ab577c7520800000000000000
-      internalID: 2701165111973676790
+      spriteID: af188ba524ab13bd0800000000000000
+      internalID: -2652133911391862278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump_Sheet_7
+      name: Coin_3
       rect:
         serializedVersion: 2
-        x: 261
+        x: 48
         y: 0
-        width: 24
-        height: 19
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6d48382ca7b3d910800000000000000
-      internalID: 1861033021071183211
+      spriteID: e2446633cee73ac40800000000000000
+      internalID: 5522397121026081838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump_Sheet_8
+      name: Coin_4
       rect:
         serializedVersion: 2
-        x: 69
+        x: 64
         y: 0
-        width: 24
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bec32d559b80fa630800000000000000
-      internalID: 3940377791074286827
+      spriteID: dcf7c7aecb85e6240800000000000000
+      internalID: 4786861022352539597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump_Sheet_9
+      name: Coin_5
       rect:
         serializedVersion: 2
-        x: 293
+        x: 80
         y: 0
-        width: 24
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef5b8797a95d968d0800000000000000
-      internalID: -2852514029522864642
+      spriteID: 59b400330516f7f40800000000000000
+      internalID: 5728404248119495573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coin_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2947bb975b197df42b0c5db794b2e86b
+      internalID: -1131650780
       vertices: []
       indices: 
       edges: []
@@ -350,7 +272,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 92567db0a8878e743b5aef17ae483234
     internalID: 0
     vertices: []
     indices: 
@@ -358,18 +280,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Jump_Sheet_0: 625391328873610493
-      Jump_Sheet_1: 810941716983449303
-      Jump_Sheet_2: -8948618655135439775
-      Jump_Sheet_3: -5748837363989459845
-      Jump_Sheet_4: 7142556492405950414
-      Jump_Sheet_5: -6111433179025021030
-      Jump_Sheet_6: 2701165111973676790
-      Jump_Sheet_7: 1861033021071183211
-      Jump_Sheet_8: 3940377791074286827
-      Jump_Sheet_9: -2852514029522864642
+      Coin_0: -3338749442709606003
+      Coin_1: 5848064539680731454
+      Coin_2: -2652133911391862278
+      Coin_3: 5522397121026081838
+      Coin_4: 4786861022352539597
+      Coin_5: 5728404248119495573
+      Coin_6: -1131650780
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
