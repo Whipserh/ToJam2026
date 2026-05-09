@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: 3cc964894af251a4cb0a4bf9bfe8e4e9
+guid: e8fdd3d94e145ee4c866d460e18564d8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4210282894916951164
-    second: Mouse_Idle-Sheet_0
+      213: 6266931509016373441
+    second: Rat_Attack-Sheet_0
   - first:
-      213: -3638007018927035874
-    second: Mouse_Idle-Sheet_1
+      213: 3210687061333630676
+    second: Rat_Attack-Sheet_1
   - first:
-      213: 6318091622971409641
-    second: Mouse_Idle-Sheet_2
+      213: -1504741790533723187
+    second: Rat_Attack-Sheet_2
   - first:
-      213: 1017572883481423519
-    second: Mouse_Idle-Sheet_3
+      213: 9018924325488674765
+    second: Rat_Attack-Sheet_3
   - first:
-      213: 8277722200329896829
-    second: Mouse_Idle-Sheet_4
+      213: 946092360878882438
+    second: Rat_Attack-Sheet_4
+  - first:
+      213: 5934518708527061412
+    second: Rat_Attack-Sheet_5
+  - first:
+      213: -1901542499078368814
+    second: Rat_Attack-Sheet_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -112,111 +118,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_0
+      name: Rat_Attack-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 15
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2495acf286295ed44826ecc8554d4837
-      internalID: 152646115
+      spriteID: 1c8af9af00d98f650800000000000000
+      internalID: 6266931509016373441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_1
+      name: Rat_Attack-Sheet_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 78
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 980c39a1880c94f4eb8482bbc4929c05
-      internalID: 706491255
+      spriteID: 4dedbbf0fd6ae8c20800000000000000
+      internalID: 3210687061333630676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_2
+      name: Rat_Attack-Sheet_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 145
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7d7a92d956e3bdf4fb18a4efcc40f07b
-      internalID: -636587207
+      spriteID: dcb5d8060551e1be0800000000000000
+      internalID: -1504741790533723187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_3
+      name: Rat_Attack-Sheet_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 211
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 99e478c1437b54043988fbe07649a3b7
-      internalID: -81438543
+      spriteID: dc7c1e4c3e7a92d70800000000000000
+      internalID: 9018924325488674765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mouse_Idle-Sheet_4
+      name: Rat_Attack-Sheet_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 278
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 600dd976650747a469b7cefe3485f89e
-      internalID: 185451157
+      spriteID: 68e75e65df1312d00800000000000000
+      internalID: 946092360878882438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_Attack-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a95aaea255ab5250800000000000000
+      internalID: 5934518708527061412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_Attack-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 49
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d110210c2d5c95e0800000000000000
+      internalID: -1901542499078368814
       vertices: []
       indices: 
       edges: []
@@ -225,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1d345fe7e57c56548b6222386405cb61
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -233,15 +283,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Mouse_Idle-Sheet_0: 152646115
-      Mouse_Idle-Sheet_1: 706491255
-      Mouse_Idle-Sheet_2: -636587207
-      Mouse_Idle-Sheet_3: -81438543
-      Mouse_Idle-Sheet_4: 185451157
+      Rat_Attack-Sheet_0: 6266931509016373441
+      Rat_Attack-Sheet_1: 3210687061333630676
+      Rat_Attack-Sheet_2: -1504741790533723187
+      Rat_Attack-Sheet_3: 9018924325488674765
+      Rat_Attack-Sheet_4: 946092360878882438
+      Rat_Attack-Sheet_5: 5934518708527061412
+      Rat_Attack-Sheet_6: -1901542499078368814
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
