@@ -19,17 +19,30 @@ public class detection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Anything");
-        if (collision.gameObject.layer == layercheck)
+        if (layercheck == 6)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                isinside = true;
+            }
+        }
+        else if (collision.gameObject.layer == layercheck)
         {
             isinside = true;
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        print("Anything");
-        if (collision.gameObject.layer == layercheck)
+        if (layercheck == 6)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                isinside = false;
+            }
+        }
+        else if (collision.gameObject.layer == layercheck)
         {
             isinside = false;
         }
