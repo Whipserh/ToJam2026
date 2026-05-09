@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b5e11b0c5d233b640a455a2f5ed2ab35
+guid: f0f014138876ecb44b1e27a6076bb9e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8382717070696663976
-    second: spikes_0
+      213: 6917791396890702407
+    second: bgbrick_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spikes_0
+      name: bgbrick_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 10
+        width: 424
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8ab4a7323c4655470800000000000000
-      internalID: 8382717070696663976
+      spriteID: 7427ce99f9ee00060800000000000000
+      internalID: 6917791396890702407
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spikes_0: 8382717070696663976
+      bgbrick_0: 6917791396890702407
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

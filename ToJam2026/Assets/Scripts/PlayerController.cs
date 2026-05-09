@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour
         #endregion
         #region Dash Controls
         //****************************************************************************Dash controls
-        if (Input.GetKeyDown(KeyCode.Space) && dashLegible()) //can only DASHING if we aren't dashing
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashLegible()) //can only DASHING if we aren't dashing
         {
             hadDashed = true;
             Debug.Log("Dash");
@@ -225,7 +225,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Jump
-            if (Input.GetKeyDown(KeyCode.W) && (legibleJump() || legibleWallJump()))
+            if (Input.GetKeyDown(KeyCode.Space) && (legibleJump() || legibleWallJump()))
             {
                 JUMPED = true;
                 playerInput.y++;
