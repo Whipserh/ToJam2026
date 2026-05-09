@@ -61,12 +61,6 @@ public class PlayerVisuals : MonoBehaviour
                 case CharacterState.jump:
                     animator.CrossFade("Jumping", 0f);
                     break;
-                case CharacterState.falling:
-                    animator.CrossFade("Falling", 0f);
-                    break;
-                case CharacterState.landing:
-                    animator.CrossFade("Landing", 0f);
-                    break;
                 case CharacterState.die:
                     animator.CrossFade("Die", 0f);
                     break;

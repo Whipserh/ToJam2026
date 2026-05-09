@@ -49,13 +49,11 @@ public class PlayerController : MonoBehaviour
     public int MAX_HEALTH = 10;
     public int currentHealth = 10;
     public Transform startingPos;
-
-    private bool Landing = false;
-    public void hasLanded() { Landing = false; }
+    
 
     public enum CharacterState
     {
-        idle, walk, jump, die, falling, landing
+        idle, walk, jump, die
     }
 
     public enum FacingDirection
@@ -76,13 +74,6 @@ public class PlayerController : MonoBehaviour
     }
 
     private bool respawning = false;
-    public void jump()
-    {
-        float initalJumpVelocoty = 2 * apexHeight / apexTime;
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, initalJumpVelocoty);
-        //playerInput.y++;
-        JUMPED = false;
-    }
     void Update()
     {
         //Get player input
@@ -112,7 +103,7 @@ public class PlayerController : MonoBehaviour
                 {
                     currentCharacterState = CharacterState.walk;
                 }
-                if (JUMPED)
+                if (!IsGrounded())
                 {
                     currentCharacterState = CharacterState.jump;
                 }
@@ -123,32 +114,22 @@ public class PlayerController : MonoBehaviour
                     //if we are on the ground from walking and we are not walking
                     currentCharacterState = CharacterState.idle;
                 }
-                if (JUMPED)
+                if (!IsGrounded())
                 {
                     currentCharacterState = CharacterState.jump;
                 }
                 break;
-            case CharacterState.jump://DONE
-                if(rb.linearVelocity.y <= 0 && !JUMPED)
-                    currentCharacterState = CharacterState.falling;
-                break;
-
-            case CharacterState.falling:
+            case CharacterState.jump:
                 if (IsGrounded())
                 {
-                    Landing = true;
-                    currentCharacterState = CharacterState.landing;
-                }
-                break;
-            case CharacterState.landing:
-                if (!Landing)
-                if (IsWalking())
-                {
-                    currentCharacterState = CharacterState.walk;
-                }
-                else
-                {
-                    currentCharacterState = CharacterState.idle;
+                    if (IsWalking())
+                    {
+                        currentCharacterState = CharacterState.walk;
+                    }
+                    else
+                    {
+                        currentCharacterState = CharacterState.idle;
+                    }
                 }
                 break;
             case CharacterState.die:
@@ -218,9 +199,8 @@ public class PlayerController : MonoBehaviour
             //Jump
             if (Input.GetKeyDown(KeyCode.Space) && (legibleJump() || legibleWallJump()))
             {
-
-                //playerInput.y++;
                 JUMPED = true;
+                playerInput.y++;
             }
         }
         MovementUpdate(playerInput);
@@ -233,6 +213,8 @@ public class PlayerController : MonoBehaviour
 
     public bool legibleJump()
     {
+        //Debug.Log(JUMPED);
+
         //coyote time should only start counting the moment the player is not longer on the ground
         return (!JUMPED && (IsGrounded() || (coyoteTimeElapsed < coyoteTime)));
     }
@@ -306,7 +288,7 @@ public class PlayerController : MonoBehaviour
         float initalJumpVelocoty = 2 * apexHeight / apexTime;
         if (playerInput.y > 0)//either the player is grounded or its been a couple of seconds since they left the ground
         {
-            //rb.linearVelocity = new Vector2(rb.linearVelocity.x, initalJumpVelocoty);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, initalJumpVelocoty);
         }
 
         //Debug.Log(playerInput);
@@ -407,7 +389,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return !JUMPED && Physics2D.BoxCast(transform.position, boxSize, 0f, -transform.up, 0.5f, solidGround) && rb.linearVelocity.y < 0.01f;
+        return Physics2D.BoxCast(transform.position, boxSize, 0f, -transform.up, 0.5f, solidGround) && rb.linearVelocity.y < 0.01f;
     }
 
     //referenced in the animator
