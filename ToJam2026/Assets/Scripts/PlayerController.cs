@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
 
     private float coyoteTimeElapsed = 0; // resets after jumping
+    private BoxCollider2D myCollider;
 
     public CharacterState currentCharacterState = CharacterState.idle;
     public CharacterState previousCharacterState = CharacterState.idle;
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
         currentWallJumps = 0;
         DASHING = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
+        myCollider = GetComponent<BoxCollider2D>();
     }
 
     private bool respawning = false;
@@ -188,12 +190,25 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.D))
             {
-                playerInput.x++;
+                playerInput.x += 1;
             }
 
             if (Input.GetKey(KeyCode.A))
             {
-                playerInput.x--;
+                playerInput.x -= 1;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                myCollider.size = new Vector2(1.0f, 0.4f);
+                myCollider.offset = new Vector2(0.0f, -0.3f);
+            }
+            else
+            {
+                if (!IsUnder())
+                {
+                    myCollider.size = new Vector2(1.0f, 1.0f);
+                    myCollider.offset = new Vector2(0.0f, 0.0f);
+                }
             }
 
             //Jump
@@ -344,12 +359,12 @@ public class PlayerController : MonoBehaviour
         if (RIGHT)
         {
             //Debug.Log("right");
-            rb.linearVelocity += Vector2.right * Time.fixedDeltaTime * acceleration;
+            rb.linearVelocity += Vector2.right * Time.fixedDeltaTime * acceleration * 20;
         }
         else if (LEFT)
         {
             //Debug.Log("left");
-            rb.linearVelocity += Vector2.left * Time.fixedDeltaTime * acceleration;
+            rb.linearVelocity += Vector2.left * Time.fixedDeltaTime * acceleration * 20;
         }
         else // if we aren't moving then we should slow down
         {
@@ -390,6 +405,10 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded()
     {
         return Physics2D.BoxCast(transform.position, boxSize, 0f, -transform.up, 0.5f, solidGround) && rb.linearVelocity.y < 0.01f;
+    }
+    public bool IsUnder()
+    {
+        return Physics2D.BoxCast(transform.position, boxSize, 0f, transform.up, 0.5f, solidGround) && rb.linearVelocity.y < 0.01f;
     }
 
     //referenced in the animator

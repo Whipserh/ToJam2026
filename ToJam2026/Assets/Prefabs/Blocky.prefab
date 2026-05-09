@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6226911726294360509}
   - component: {fileID: -2948684232968749083}
   - component: {fileID: -5948375957873849646}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blocky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 99
+  m_Mass: 10
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
