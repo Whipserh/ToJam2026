@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 972cf12584616bb4dbe1c7b5a48f8eb9
+guid: 10903190737e5e44aa6233fed024d144
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6650738528677379693
-    second: sticks_0
-  - first:
-      213: -3301283709267967565
-    second: sticks_1
+      213: 2530564911472380330
+    second: button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,34 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sticks_0
+      name: button_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 23
-        width: 62
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d6eb1d7647b2c4c50800000000000000
-      internalID: 6650738528677379693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sticks_1
-      rect:
-        serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 62
+        width: 64
         height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b18c4615fb7f22d0800000000000000
-      internalID: -3301283709267967565
+      spriteID: aa90165216f5e1320800000000000000
+      internalID: 2530564911472380330
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sticks_0: 6650738528677379693
-      sticks_1: -3301283709267967565
+      button_0: 2530564911472380330
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
