@@ -162,7 +162,7 @@ public class Rat : MonoBehaviour
         print("Something is here");
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerController.Instance.currentHealth -= 10;
+            PlayerController.Instance.takeDamage(1);
         }
     }
 

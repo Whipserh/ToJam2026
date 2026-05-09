@@ -18,7 +18,6 @@ public class Coins : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Object entered: " + collision.gameObject.layer);
 
         // Example: Check by tag
         if (collision.gameObject.CompareTag("Player"))
