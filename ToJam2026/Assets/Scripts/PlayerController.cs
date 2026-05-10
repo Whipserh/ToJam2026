@@ -69,7 +69,11 @@ public class PlayerController : MonoBehaviour
 
     public enum CharacterState
     {
-        idle, walk, jump, die, walkC, idleC
+        idle, walk, jump, die, walkC, idleC, victoryPose
+    }
+    public void setVictoryPose()
+    {
+        currentCharacterState = CharacterState.victoryPose;
     }
 
     public enum FacingDirection
@@ -84,7 +88,8 @@ public class PlayerController : MonoBehaviour
     public bool previousIsCrouched = false;
 
     void Start()
-    {
+    {;
+        //setVictoryPose();
         transform.position = startingPos.position;
 
         currentWallJumps = 0;

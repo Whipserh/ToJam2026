@@ -99,6 +99,9 @@ public class PlayerVisuals : MonoBehaviour
                 case CharacterState.idleC://need to change to idle couch
                     animator.CrossFade("MouseCrouchIdle", 0f);
                     break;
+                case CharacterState.victoryPose:
+                    animator.CrossFade("MouseVictory", 0f);
+                    break;
                 
             }
         }//end if
