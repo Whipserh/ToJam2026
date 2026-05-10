@@ -5,6 +5,7 @@ public class Blockplacement : MonoBehaviour
 
     public GameObject Blocky;
     public int blocksLeft = 1;
+    public AudioSource placesound;
 
     public static Blockplacement Instance { get; private set; }
 
@@ -52,6 +53,7 @@ public class Blockplacement : MonoBehaviour
         {
             return;
         }
+        placesound.Play();
         Instantiate(Blocky, (Vector2)transform.position + directions, transform.rotation);
         blocksLeft -= 1;
     }

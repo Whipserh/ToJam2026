@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Coins : MonoBehaviour
 {
     public Collider2D Player;
+    public AudioSource coinsounds;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +25,8 @@ public class Coins : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             UIController.Instance.addcoin();
+            coinsounds.transform.parent = null;
+            coinsounds.Play();
             //UIController.Instance.coins ++;
             Destroy(gameObject);
         }
