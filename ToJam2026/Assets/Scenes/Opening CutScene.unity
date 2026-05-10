@@ -164,12 +164,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlideShowAnimation
   spriteUI: {fileID: 1610050500}
-  fadeTime: 1
-  durationPerSlide: 2
+  fadeTime: 0.5
+  durationPerSlide: 3.5
   images:
-  - {fileID: 815565631, guid: 0305a67d7eab1d34fa4937996b238d07, type: 3}
-  - {fileID: -977414204, guid: 0305a67d7eab1d34fa4937996b238d07, type: 3}
-  - {fileID: -561363852, guid: 0305a67d7eab1d34fa4937996b238d07, type: 3}
+  - {fileID: 21300000, guid: 09aa2ec6db0197946839e4ffe8c96f10, type: 3}
+  - {fileID: 21300000, guid: 61b51309c455b7749910ee332e689933, type: 3}
+  - {fileID: 21300000, guid: 0b3b9174bd8d8a548a4b109da917e760, type: 3}
 --- !u!1 &663347607
 GameObject:
   m_ObjectHideFlags: 0
