@@ -81,13 +81,10 @@ public class PlayerVisuals : MonoBehaviour
             switch (playerController.currentCharacterState)
             {
                 case CharacterState.idle:
-                    if (playerController.previousCharacterState == CharacterState.jump)
-                        //cameraController.Shake(0.2f, 0.2f);
+                    
                     animator.CrossFade("Idle", 0f);
                     break;
                 case CharacterState.walk:
-                    if (playerController.previousCharacterState == CharacterState.jump)
-                        //cameraController.Shake(0.2f, 0.2f);
                     animator.CrossFade("Walking", 0f);
                     break;
                 case CharacterState.jump:
@@ -96,6 +93,13 @@ public class PlayerVisuals : MonoBehaviour
                 case CharacterState.die:
                     animator.CrossFade("Die", 0f);
                     break;
+                case CharacterState.walkC:
+                    animator.CrossFade("MouseCrouch", 0f);
+                    break;
+                case CharacterState.idleC://need to change to idle couch
+                    animator.CrossFade("MouseCrouchIdle", 0f);
+                    break;
+                
             }
         }//end if
 
