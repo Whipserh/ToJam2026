@@ -14,15 +14,10 @@ public class Rat : MonoBehaviour
     int FacingDirection; //-1 = left, 1 = right
     float waiting;
 
-    public detection leftwalldecOBJ;
-    public detection leftedgedecOBJ;
-    public detection leftplayerdecOBJ;
-    public detection attackPlayerBox;
-
-    public bool leftWallDec;
-    public bool groundInFrontOfRat;
-    public bool seesPlayer;
-    public bool withinAttackRange;
+     bool leftWallDec;
+    bool groundInFrontOfRat;
+    bool seesPlayer;
+    bool withinAttackRange;
 
     private enum RateState { idle, wonder, purse}
 
