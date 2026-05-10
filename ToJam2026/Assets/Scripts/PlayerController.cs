@@ -490,9 +490,10 @@ public class PlayerController : MonoBehaviour
     }
 
     //referenced in the animator
-    public void OnAnimationDeathCompleet()
+    public IEnumerator OnAnimationDeathCompleet()
     {
-        print("here");
+        yield return new WaitForSeconds(0.8f);
+
         if (Checkpoint.lastCheckpoint != null) 
             transform.position = Checkpoint.lastCheckpoint.transform.position;
         else
@@ -503,6 +504,8 @@ public class PlayerController : MonoBehaviour
         visuals.updateHealthUI((int)currentHealth);
 
         //gameObject.SetActive(false);
+
+        yield return null;
     }
 
     public FacingDirection GetFacingDirection()
@@ -518,8 +521,14 @@ public class PlayerController : MonoBehaviour
         {
             currentHealth = 0;
         }
-        print("Current health: " + currentHealth);
         hitsound.Play();
         visuals.updateHealthUI(currentHealth);
     }
+
+    IEnumerator wait()
+    {
+        
+        yield return new WaitForSeconds(1f); // Wait 0.1s before continuing loop
+    }
+
 }

@@ -79,10 +79,6 @@ public class Rat : MonoBehaviour
         //leftedgedec = leftedgedecOBJ.isinside;
         //leftplayerdec = leftplayerdecOBJ.isinside;
         //attackPlayer = attackPlayerBox.isinside;
-        
-        Debug.Log("Left wall: " + leftWallDec);
-        Debug.Log("Left edge: " + groundInFrontOfRat);
-        Debug.Log("Left player: " + seesPlayer);
 
         if (withinAttackRange)
         {

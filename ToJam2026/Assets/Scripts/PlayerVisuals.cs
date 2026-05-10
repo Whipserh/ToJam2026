@@ -43,25 +43,21 @@ public class PlayerVisuals : MonoBehaviour
                 heart1.SetActive(false);
                 heart2.SetActive(false);
                 heart3.SetActive(false);
-                print("Health 0");
                 break;
             case 1:
                 heart1.SetActive(true);
                 heart2.SetActive(false);
                 heart3.SetActive(false);
-                print("Health 1");
                 break;
             case 2:
                 heart1.SetActive(true);
                 heart2.SetActive(true);
                 heart3.SetActive(false);
-                print("Health 2");
                 break;
             case 3:
                 heart1.SetActive(true);
                 heart2.SetActive(true);
                 heart3.SetActive(true);
-                print("Health 3");
                 break;
         }
     }
@@ -91,7 +87,6 @@ public class PlayerVisuals : MonoBehaviour
                     animator.CrossFade("Jumping", 0f);
                     break;
                 case CharacterState.die:
-                    print("I dead");
                     animator.CrossFade("Die", 0f);
                     break;
                 case CharacterState.walkC:
