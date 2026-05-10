@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndTrigger : MonoBehaviour
 {
@@ -21,14 +22,15 @@ public class EndTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            EndGame();
+            StartCoroutine(EndGame());
         }
     }
 
-    void EndGame()
+    IEnumerator EndGame()
     {
-        print("EndGame");
-        player.SetActive(false);
+        PlayerController.Instance.setVictoryPose();
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(3);
 
     }
 }

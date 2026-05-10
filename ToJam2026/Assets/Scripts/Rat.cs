@@ -120,7 +120,7 @@ public class Rat : MonoBehaviour
                         break;
             case 1://walk around
 
-                if (smarts == 1)//dumb rat runs off
+                if (smarts == 0)//dumb rat runs off
                     transform.Translate(Vector3.right * speed * FacingDirection * Time.deltaTime);
                 //if there is ground in front of a rat and they aren't about to walk into a wall ->Move Rat
                 else if (groundInFrontOfRat && !leftWallDec) //!leftwalldec || 
@@ -134,7 +134,7 @@ public class Rat : MonoBehaviour
                 if (!seesPlayer)//wait if the rat doesn't see player
                     waiting += Time.deltaTime;
                 
-                else if (smarts == 1)//dumb rat runs off
+                else if (smarts == 0)//dumb rat runs off
                     transform.Translate(Vector3.right * speed * 1.5f * FacingDirection * Time.deltaTime);
                 //if there is ground in front of a rat and they aren't about to walk into a wall ->Move Rat 50% Faster
                 else if (groundInFrontOfRat && !leftWallDec)
