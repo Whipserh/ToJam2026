@@ -18,6 +18,8 @@ public class Rat : MonoBehaviour
     bool groundInFrontOfRat;
     bool seesPlayer;
     bool withinAttackRange;
+    public AudioSource AttackSound;
+    float waitsound = 0;
 
     private enum RateState { idle, wonder, purse}
 
@@ -86,6 +88,17 @@ public class Rat : MonoBehaviour
         {
             Debug.Log("attack player");
             _animator.SetTrigger("attack");
+            waitsound += Time.deltaTime;
+            if (!AttackSound.isPlaying)
+            {
+                if (waitsound > 0.75f)
+                {
+                    AttackSound.Play();
+                    waitsound = 0;
+                }
+            }
+
+
         }
 
         //if we detect a player
