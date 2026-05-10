@@ -1,5 +1,100 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2124283865908710630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4853638791982191690}
+  - component: {fileID: 202710770907897596}
+  - component: {fileID: 1470964492611286910}
+  m_Layer: 0
+  m_Name: AttackDetection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4853638791982191690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124283865908710630}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.45, y: -0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 108858194814499933}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &202710770907897596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124283865908710630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6f03f13a69a7f4dbcc06afd5cfc902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::detection
+  isinside: 0
+  layercheck:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!61 &1470964492611286910
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124283865908710630}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.15108967, y: 0.1888619}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.3021793, y: 1.3777238}
+  m_EdgeRadius: 0
 --- !u!1 &2813672008371207317
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +248,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::detection
   isinside: 0
-  layercheck: 3
+  layercheck:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!50 &5108549701526849189
 Rigidbody2D:
   serializedVersion: 5
@@ -334,7 +431,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::detection
   isinside: 0
-  layercheck: 3
+  layercheck:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!50 &5973191026135693046
 Rigidbody2D:
   serializedVersion: 5
@@ -515,7 +614,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::detection
   isinside: 0
-  layercheck: 6
+  layercheck:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!50 &5664880246559297901
 Rigidbody2D:
   serializedVersion: 5
@@ -580,6 +681,7 @@ Transform:
   - {fileID: 2105408741831622749}
   - {fileID: 4284276686341361449}
   - {fileID: 537441790698809845}
+  - {fileID: 4853638791982191690}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8510481565149694600
@@ -680,12 +782,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fbb53c7383ce574b9e39e3ba2e3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rat
+  _animator: {fileID: 0}
   defultMood: 0
   smarts: 1
   speed: 0
   leftwalldecOBJ: {fileID: 2216658039752474757}
   leftedgedecOBJ: {fileID: 8206772538052395975}
   leftplayerdecOBJ: {fileID: 3388170855741433049}
+  attackPlayerBox: {fileID: 202710770907897596}
+  player:
+    serializedVersion: 2
+    m_Bits: 256
+  ground:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!95 &8035922317322448445
 Animator:
   serializedVersion: 7

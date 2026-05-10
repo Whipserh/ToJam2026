@@ -2,23 +2,13 @@ using UnityEngine;
 
 public class detection : MonoBehaviour
 {
-    public bool isinside;
-    public int layercheck; //8
+    public bool isinside = false;
+    public LayerMask layercheck; //8
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (layercheck == 6)
         {
             if (collision.gameObject.CompareTag("Player"))
@@ -26,11 +16,29 @@ public class detection : MonoBehaviour
                 isinside = true;
             }
         }
-        else if (collision.gameObject.layer == layercheck)
+        else if (layercheck == (layercheck | 1 << collision.gameObject.layer))
         {
-            isinside = false;
+            isinside = true;
         }
         
+    }
+    
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+
+
+
+        if (layercheck == 6)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                isinside = true;
+            }
+        }
+        else if (layercheck == (layercheck | 1 << collision.gameObject.layer))
+        {
+            isinside = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -42,9 +50,9 @@ public class detection : MonoBehaviour
                 isinside = false;
             }
         }
-        else if (collision.gameObject.layer == layercheck)
+        else if (layercheck == (layercheck | 1 << collision.gameObject.layer))
         {
-            isinside = true;
+            isinside = false;
         }
     }
 }

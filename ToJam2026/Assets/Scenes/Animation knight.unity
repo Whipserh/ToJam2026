@@ -6506,9 +6506,8 @@ MonoBehaviour:
   acceleration: 10
   deceleration: 4
   maxSpeed: 3
-  MAX_HEALTH: 10
-  currentHealth: 10
   startingPos: {fileID: 1737393424}
+  visuals: {fileID: 2021810602}
 --- !u!4 &2021810604
 Transform:
   m_ObjectHideFlags: 0
