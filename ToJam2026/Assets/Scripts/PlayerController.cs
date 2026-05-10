@@ -81,6 +81,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        transform.position = startingPos.position;
+
         currentWallJumps = 0;
         DASHING = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
