@@ -168,12 +168,12 @@ MonoBehaviour:
   fadeTime: 0.5
   durationPerSlide: 3.5
   images:
-  - {fileID: 4224287244503954185, guid: ffca7a980e0928f4aabeb26469a322dd, type: 3}
-  - {fileID: -3786734556793339722, guid: 723122ff88d0aec479b5febc6ae8cd25, type: 3}
-  - {fileID: -2538785496450357261, guid: 4862069db0b910949860073ff57f4c37, type: 3}
-  - {fileID: -1318161930787089667, guid: 0dfac831b4344de488afd6f7988e2405, type: 3}
-  - {fileID: 3856082887442064691, guid: 3b51c816d06c33442bdeae36dc911fcc, type: 3}
-  - {fileID: 8911055336248104618, guid: 65715a6f806d623448155ec25b262fbc, type: 3}
+  - {fileID: 21300000, guid: 05076e9c04d23614d96d095481dcdfa1, type: 3}
+  - {fileID: 21300000, guid: 1cec609c7323b1d4c8f51c9fb38e37a0, type: 3}
+  - {fileID: 21300000, guid: 4e4160e7060c8934a8d5354fef7b8ed3, type: 3}
+  - {fileID: 21300000, guid: 683b9794384f75b4d91c9529a48bf59e, type: 3}
+  - {fileID: 21300000, guid: 39f86ca861bef0a429c729e89d61d6f5, type: 3}
+  - {fileID: 21300000, guid: 8c1d312b16615bf4d8e5a10ad0181f96, type: 3}
 --- !u!1 &663347607
 GameObject:
   m_ObjectHideFlags: 0
