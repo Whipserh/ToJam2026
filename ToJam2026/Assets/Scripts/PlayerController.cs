@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     private FacingDirection currentFacingDirection = FacingDirection.right;
     private Rigidbody2D rb;
 
-
+    public bool isCrouched = false;
 
     void Start()
     {
@@ -219,6 +219,7 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.S))
             {
+                isCrouched = true;
                 myCollider.size = new Vector2(1.0f, 0.5f);
                 myCollider.offset = new Vector2(0.0f, -0.25f);
             }
@@ -226,6 +227,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (!IsUnder())
                 {
+                    isCrouched = false;
                     myCollider.size = new Vector2(1.0f, 1.11f);
                     myCollider.offset = new Vector2(0.0f, 0.05f);
                 }
