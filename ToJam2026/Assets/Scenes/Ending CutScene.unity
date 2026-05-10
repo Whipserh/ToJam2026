@@ -163,7 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93813c52f9218144a41279ada686e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlideShowAnimation
-  sceneToLoad: 2
   spriteUI: {fileID: 1610050500}
   fadeTime: 0.5
   durationPerSlide: 3.5
