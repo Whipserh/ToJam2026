@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SlideShowAnimation : MonoBehaviour
 {
+    public int sceneToLoad;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +24,7 @@ public class SlideShowAnimation : MonoBehaviour
         }
 
         //wait till the last slide runs and then move to next scene
-        if(slideIndex == images.Length && !running) SceneManager.LoadScene(2); //Replace with varable 4 scenes total
+        if(slideIndex == images.Length && !running) SceneManager.LoadScene(sceneToLoad); //Replace with varable 4 scenes total
     }
 
 

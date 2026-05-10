@@ -82,12 +82,12 @@ public class PlayerVisuals : MonoBehaviour
             {
                 case CharacterState.idle:
                     if (playerController.previousCharacterState == CharacterState.jump)
-                        cameraController.Shake(0.2f, 0.2f);
+                        //cameraController.Shake(0.2f, 0.2f);
                     animator.CrossFade("Idle", 0f);
                     break;
                 case CharacterState.walk:
                     if (playerController.previousCharacterState == CharacterState.jump)
-                        cameraController.Shake(0.2f, 0.2f);
+                        //cameraController.Shake(0.2f, 0.2f);
                     animator.CrossFade("Walking", 0f);
                     break;
                 case CharacterState.jump:
