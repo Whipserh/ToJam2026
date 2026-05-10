@@ -22,7 +22,7 @@ public class SlideShowAnimation : MonoBehaviour
         }
 
         //wait till the last slide runs and then move to next scene
-        if(slideIndex == images.Length && !running) SceneManager.LoadScene(2);
+        if(slideIndex == images.Length && !running) SceneManager.LoadScene(2); //Replace with varable 4 scenes total
     }
 
 
