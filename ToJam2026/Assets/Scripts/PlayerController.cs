@@ -492,6 +492,7 @@ public class PlayerController : MonoBehaviour
     //referenced in the animator
     public void OnAnimationDeathCompleet()
     {
+        print("here");
         if (Checkpoint.lastCheckpoint != null) 
             transform.position = Checkpoint.lastCheckpoint.transform.position;
         else

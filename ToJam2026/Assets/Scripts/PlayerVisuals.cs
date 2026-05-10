@@ -91,6 +91,7 @@ public class PlayerVisuals : MonoBehaviour
                     animator.CrossFade("Jumping", 0f);
                     break;
                 case CharacterState.die:
+                    print("I dead");
                     animator.CrossFade("Die", 0f);
                     break;
                 case CharacterState.walkC:
