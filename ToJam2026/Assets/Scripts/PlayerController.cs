@@ -51,6 +51,9 @@ public class PlayerController : MonoBehaviour
     public Transform startingPos;
     public PlayerVisuals visuals;
 
+    public AudioSource jumpsound;
+    public AudioSource hitsound;
+
     public static PlayerController Instance { get; private set; }
 
     void Awake()
@@ -237,6 +240,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && (legibleJump() || legibleWallJump()))
             {
                 JUMPED = true;
+                jumpsound.Play();
                 playerInput.y++;
             }
         }
@@ -462,6 +466,7 @@ public class PlayerController : MonoBehaviour
             currentHealth = 0;
         }
         print("Current health: " + currentHealth);
+        hitsound.Play();
         visuals.updateHealthUI(currentHealth);
     }
 }
