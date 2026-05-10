@@ -4,6 +4,8 @@ using static PlayerController;
 
 public class Rat : MonoBehaviour
 {
+    [SerializeField] private Animator _animator;
+
     int mood; //0 = don't move, 1 = move left and right, 2= chase towards mouse, 3 = walking back
     Vector2 lastspot;
     public int defultMood; //0 for don't move, 1 for moving
@@ -15,112 +17,122 @@ public class Rat : MonoBehaviour
     public detection leftwalldecOBJ;
     public detection leftedgedecOBJ;
     public detection leftplayerdecOBJ;
+    public detection attackPlayerBox;
 
-    bool leftwalldec;
-    bool leftedgedec;
-    bool leftplayerdec;
+    public bool leftWallDec;
+    public bool groundInFrontOfRat;
+    public bool seesPlayer;
+    public bool withinAttackRange;
+
+    private enum RateState { idle, wonder, purse}
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _animator = gameObject.GetComponent<Animator>();
         FacingDirection = -1;
         mood = defultMood;
     }
 
-    // Update is called once per frame
     void Update()
     {
-
+        //animation
+        switch (mood) {
+            case 0:
+                _animator.SetBool("Walk", false);
+                break;
+            case 1:
+                _animator.SetBool("Walk", true);
+                break;
+            case 2:
+                _animator.SetBool("Walk", true);
+                break;
+        }
+        Debug.DrawLine(transform.position,transform.position + (new Vector3(FacingDirection * 0.72f, -1.32f)), Color.green);
 
         //Triggers
-        leftwalldec = leftwalldecOBJ.isinside;
-        leftedgedec = leftedgedecOBJ.isinside;
-        leftplayerdec = leftplayerdecOBJ.isinside;
-        //Dumb first
+        #region triggers
+        
+        //check for the ground LEFT DETECT
+        if (Physics2D.BoxCast(transform.position + (new Vector3(FacingDirection * 0.72f, -1.32f)), new Vector2(0.6f, 0.6f), 0, Vector2.left, 0.1f, ground))//if we detect the ground
+            groundInFrontOfRat = true;
+        else
+            groundInFrontOfRat= false;
+        //check for wall WALL DETECT
+        if (Physics2D.BoxCast(transform.position + (new Vector3(FacingDirection * 1.2f, .012f)) , new Vector2(0.6f, 1.8f), 0, Vector2.left, 0.1f, ground))//if we detect the ground
+            leftWallDec = true;
+        else
+            leftWallDec = false;
 
-        //print("Left wall: " + leftwalldec + "Right wall: " + rightwalldec + "Left floor: " + leftedgedec + "Right floor: " + rightedgedec);
 
-        if (leftplayerdec)
+
+        //check for player vision LEFT VISION
+        if (Physics2D.BoxCast(transform.position + (new Vector3(FacingDirection * 4.02f, 0)), new Vector2(6, 1.8f), 0, Vector2.left, 0.1f, player))//if we detect the ground
+            seesPlayer = true;
+        else
+            seesPlayer = false;
+        //check for attackPlayer attack player
+        if (Physics2D.BoxCast(transform.position + (new Vector3(FacingDirection * 1.5f, -0.5f)), new Vector2(1, 1), 0, Vector2.left, 0.1f, player))//if we detect the ground
+            withinAttackRange = true;
+        else
+            withinAttackRange = false;
+        
+        #endregion
+        //leftWallDec = leftwalldecOBJ.isinside;
+        //leftedgedec = leftedgedecOBJ.isinside;
+        //leftplayerdec = leftplayerdecOBJ.isinside;
+        //attackPlayer = attackPlayerBox.isinside;
+        
+        Debug.Log("Left wall: " + leftWallDec);
+        Debug.Log("Left edge: " + groundInFrontOfRat);
+        Debug.Log("Left player: " + seesPlayer);
+
+        if (withinAttackRange)
+        {
+            Debug.Log("attack player");
+            _animator.SetTrigger("attack");
+        }
+
+        //if we detect a player
+        if (seesPlayer)
         {
             mood = 2;
         }
-        switch (smarts) { 
-            case 0://dumb rat -> will run off edge
-            switch (mood) {
-                    case 0:
+        
+        
+        //smart rat will check to see if there is an edge before walking
+        switch (mood){
+            case 0://stand in a spot
                 waiting += Time.deltaTime;
                 if (waiting >= 1)
                 {
-                    turnAround();
-                    waiting = 0;
-                }
-                        break;
-                    case 1:
-            
-                transform.Translate(Vector3.right * speed * FacingDirection * Time.deltaTime);
-                if (leftwalldec)
-                {
-                    turnAround();
-                    //waiting += Time.deltaTime;
-                }
-                //if (waiting >= 1)
-                {
-                    //turnAround();
-                    //waiting = 0;
-                }
-                        break;
-                    case 2:
-            
-                transform.Translate(Vector3.right * speed * 1.5f * FacingDirection * Time.deltaTime);
-                if (!leftplayerdec)
-                {
-                    waiting += Time.deltaTime;
-                }
-
-                if (waiting >= 0.1)
-                {
-                    waiting = 0;
-                    mood = defultMood;
-                }
-                        break;
-            }//inner switch
-                break;
-        case 1://smart rat will check to see if there is an edge before walking
-                switch (mood){
-                    case 0:
-                        waiting += Time.deltaTime;
-                        if (waiting >= 1)
-                        {
                             turnAround();
                             waiting = 0;
-                        }
+                }
                         break;
-                    case 1:
-                        if (leftedgedec == true && leftwalldec == false) //!leftwalldec || 
-                        {
-                            transform.Translate(Vector3.right * speed * FacingDirection * Time.deltaTime);
-                        }
-                        else
-                        {
-                            turnAround();
-                            //waiting += Time.deltaTime;
-                        }
-                        //if (waiting >= 1)
-                        {
-                            //turnAround();
-                            //waiting = 0;
-                        }
-                        break;
-                    case 2:
-                        if (leftedgedec == true && leftwalldec == false)
-                        {
-                            transform.Translate(Vector3.right * speed * 1.5f * FacingDirection * Time.deltaTime);
-                        }
-                        if (!leftplayerdec)
-                        {
-                            waiting += Time.deltaTime;
-                        }
+            case 1://walk around
 
+                if (smarts == 1)//dumb rat runs off
+                    transform.Translate(Vector3.right * speed * FacingDirection * Time.deltaTime);
+                //if there is ground in front of a rat and they aren't about to walk into a wall ->Move Rat
+                else if (groundInFrontOfRat && !leftWallDec) //!leftwalldec || 
+                    transform.Translate(Vector3.right * speed * FacingDirection * Time.deltaTime);
+                else
+                    turnAround();
+                        
+                break;
+            case 2://run after player
+                
+                if (!seesPlayer)//wait if the rat doesn't see player
+                    waiting += Time.deltaTime;
+                
+                else if (smarts == 1)//dumb rat runs off
+                    transform.Translate(Vector3.right * speed * 1.5f * FacingDirection * Time.deltaTime);
+                //if there is ground in front of a rat and they aren't about to walk into a wall ->Move Rat 50% Faster
+                else if (groundInFrontOfRat && !leftWallDec)
+                    transform.Translate(Vector3.right * speed * 1.5f * FacingDirection * Time.deltaTime);
+
+                        //if we don't see the player after a certain amount of time we 
                         if (waiting >= 0.1)
                         {
                             waiting = 0;
@@ -128,19 +140,9 @@ public class Rat : MonoBehaviour
                         }
                         break;
             }
-                break;
-        }
 
 
-        //check if edge
-        // if so, turn around
-        // else check if see enemy
-        // if see enemy change to stage 2
-        // else move forward 
-        // or stay still
-
-
-    }
+    }//end update
 
     void turnAround()
     {
@@ -158,7 +160,7 @@ public class Rat : MonoBehaviour
             FacingDirection = -1;
         }
     }
-
+    /**
     private void OnCollisionEnter2D(Collision2D collision)
     {
         print("Something is here");
@@ -166,8 +168,18 @@ public class Rat : MonoBehaviour
         {
             PlayerController.Instance.takeDamage(1);
         }
+    }**/
+    public LayerMask player, ground;
+
+
+    public void attemptPlayerHit()
+    {
+        
+        //if the player is with range and of the boxcast
+        if (Physics2D.BoxCast(transform.position + (new Vector3(FacingDirection * 1.5f, -0.5f)), new Vector2(0.5f, 1), 0, Vector2.left, 0.1f, player))
+        {
+            PlayerController.Instance.takeDamage(1);
+        }
     }
-
-
 
 }
