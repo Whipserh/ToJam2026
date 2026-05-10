@@ -19,10 +19,10 @@ public class Rat : MonoBehaviour
     public detection leftplayerdecOBJ;
     public detection attackPlayerBox;
 
-    bool leftWallDec;
-    bool leftedgedec;
-    bool leftplayerdec;
-    bool attackPlayer;
+    public bool leftWallDec;
+    public bool groundInFrontOfRat;
+    public bool seesPlayer;
+    public bool withinAttackRange;
 
     private enum RateState { idle, wonder, purse}
 
@@ -52,11 +52,12 @@ public class Rat : MonoBehaviour
 
         //Triggers
         #region triggers
+        
         //check for the ground LEFT DETECT
         if (Physics2D.BoxCast(transform.position + (new Vector3(FacingDirection * 0.72f, -1.32f)), new Vector2(0.6f, 0.6f), 0, Vector2.left, 0.1f, ground))//if we detect the ground
-            leftedgedec = true;
+            groundInFrontOfRat = true;
         else
-            leftedgedec= false;
+            groundInFrontOfRat= false;
         //check for wall WALL DETECT
         if (Physics2D.BoxCast(transform.position + (new Vector3(FacingDirection * 1.2f, .012f)) , new Vector2(0.6f, 1.8f), 0, Vector2.left, 0.1f, ground))//if we detect the ground
             leftWallDec = true;
@@ -67,37 +68,33 @@ public class Rat : MonoBehaviour
 
         //check for player vision LEFT VISION
         if (Physics2D.BoxCast(transform.position + (new Vector3(FacingDirection * 4.02f, 0)), new Vector2(6, 1.8f), 0, Vector2.left, 0.1f, player))//if we detect the ground
-            leftplayerdec = true;
+            seesPlayer = true;
         else
-            leftplayerdec = false;
+            seesPlayer = false;
         //check for attackPlayer attack player
-        if (Physics2D.BoxCast(transform.position + (new Vector3(FacingDirection * 1.45f, -0.4f)), new Vector2(6, 1.8f), 0, Vector2.left, 0.1f, player))//if we detect the ground
-            attackPlayer = true;
+        if (Physics2D.BoxCast(transform.position + (new Vector3(FacingDirection * 1.5f, -0.5f)), new Vector2(1, 1), 0, Vector2.left, 0.1f, player))//if we detect the ground
+            withinAttackRange = true;
         else
-            attackPlayer = false;
+            withinAttackRange = false;
         
+        #endregion
         //leftWallDec = leftwalldecOBJ.isinside;
         //leftedgedec = leftedgedecOBJ.isinside;
         //leftplayerdec = leftplayerdecOBJ.isinside;
         //attackPlayer = attackPlayerBox.isinside;
-        #endregion
         
         Debug.Log("Left wall: " + leftWallDec);
-        Debug.Log("Left edge: " + leftedgedec);
-        Debug.Log("Left player: " + leftplayerdec);
+        Debug.Log("Left edge: " + groundInFrontOfRat);
+        Debug.Log("Left player: " + seesPlayer);
 
-        if (attackPlayer)
+        if (withinAttackRange)
         {
             Debug.Log("attack player");
             _animator.SetTrigger("attack");
         }
-        //Dumb first
-
-        //print("Left wall: " + leftwalldec + "Right wall: " + rightwalldec + "Left floor: " + leftedgedec + "Right floor: " + rightedgedec);
-
 
         //if we detect a player
-        if (leftplayerdec)
+        if (seesPlayer)
         {
             mood = 2;
         }
@@ -118,7 +115,7 @@ public class Rat : MonoBehaviour
                 if (smarts == 1)//dumb rat runs off
                     transform.Translate(Vector3.right * speed * FacingDirection * Time.deltaTime);
                 //if there is ground in front of a rat and they aren't about to walk into a wall ->Move Rat
-                else if (leftedgedec && !leftWallDec) //!leftwalldec || 
+                else if (groundInFrontOfRat && !leftWallDec) //!leftwalldec || 
                     transform.Translate(Vector3.right * speed * FacingDirection * Time.deltaTime);
                 else
                     turnAround();
@@ -126,14 +123,13 @@ public class Rat : MonoBehaviour
                 break;
             case 2://run after player
                 
-                //wait if the rat doesn't see player
-                if (!leftplayerdec)
+                if (!seesPlayer)//wait if the rat doesn't see player
                     waiting += Time.deltaTime;
                 
                 else if (smarts == 1)//dumb rat runs off
                     transform.Translate(Vector3.right * speed * 1.5f * FacingDirection * Time.deltaTime);
                 //if there is ground in front of a rat and they aren't about to walk into a wall ->Move Rat 50% Faster
-                else if (leftedgedec && !leftWallDec)
+                else if (groundInFrontOfRat && !leftWallDec)
                     transform.Translate(Vector3.right * speed * 1.5f * FacingDirection * Time.deltaTime);
 
                         //if we don't see the player after a certain amount of time we 
@@ -175,11 +171,12 @@ public class Rat : MonoBehaviour
     }**/
     public LayerMask player, ground;
 
+
     public void attemptPlayerHit()
     {
         
         //if the player is with range and of the boxcast
-        if (Physics2D.BoxCast(transform.position, new Vector2(0.1f, 0.5f), 0, Vector2.left, 1, player))
+        if (Physics2D.BoxCast(transform.position + (new Vector3(FacingDirection * 1.5f, -0.5f)), new Vector2(0.5f, 1), 0, Vector2.left, 0.1f, player))
         {
             PlayerController.Instance.takeDamage(1);
         }
