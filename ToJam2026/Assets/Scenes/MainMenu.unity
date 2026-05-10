@@ -861,7 +861,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1862482056}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: startBtn
+        m_MethodName: backBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1581,7 +1581,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1862482056}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: startBtn
+        m_MethodName: quitBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1852,7 +1852,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1862482056}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: startBtn
+        m_MethodName: creditsBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
