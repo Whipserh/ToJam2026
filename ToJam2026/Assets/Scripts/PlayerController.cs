@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
     public enum CharacterState
     {
-        idle, walk, jump, die
+        idle, walk, jump, die, walkC, idleC
     }
 
     public enum FacingDirection
@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     public bool isCrouched = false;
+    public bool previousIsCrouched = false;
 
     void Start()
     {
@@ -123,26 +124,72 @@ public class PlayerController : MonoBehaviour
         
         switch (currentCharacterState)
         {
+            case CharacterState.idleC:
+                if (IsWalking())
+                {
+                    if (isCrouched)
+                        currentCharacterState = CharacterState.walkC;
+                    else
+                        currentCharacterState = CharacterState.walk;
+                }
+                if (!IsGrounded())
+                {
+                    currentCharacterState = CharacterState.jump;
+                }
+                if (!isCrouched)
+                    currentCharacterState = CharacterState.idle;
+                break;
             case CharacterState.idle:
                 if (IsWalking())
                 {
-                    currentCharacterState = CharacterState.walk;
+                    if (isCrouched)
+                        currentCharacterState = CharacterState.walkC;
+                    else
+                        currentCharacterState = CharacterState.walk;
                 }
                 if (!IsGrounded())
                 {
                     currentCharacterState = CharacterState.jump;
                 }
+                if(isCrouched)
+                    currentCharacterState = CharacterState.idleC;
                 break;
             case CharacterState.walk:
+                
+                //if we stop we idle
                 if (!IsWalking())
                 {
                     //if we are on the ground from walking and we are not walking
-                    currentCharacterState = CharacterState.idle;
+                    if (isCrouched)
+                        currentCharacterState = CharacterState.idleC;
+                    else
+                        currentCharacterState = CharacterState.idle;
                 }
                 if (!IsGrounded())
                 {
                     currentCharacterState = CharacterState.jump;
                 }
+
+                //if we crouch while walking we crouch walk
+                if (isCrouched)
+                    currentCharacterState = CharacterState.walkC;
+                break;
+            case CharacterState.walkC:
+                if (!IsWalking())
+                {
+                    //if we are on the ground from walking and we are not walking
+                    if (isCrouched)
+                        currentCharacterState = CharacterState.idleC;
+                    else
+                        currentCharacterState = CharacterState.idle;
+                }
+                if (!IsGrounded())
+                {
+                    currentCharacterState = CharacterState.jump;
+                }
+                //if we are crouch walking and we are no longer crouched switch back to walk
+                if (!isCrouched)
+                    currentCharacterState = CharacterState.walk;
                 break;
             case CharacterState.jump:
                 if (IsGrounded())
@@ -248,7 +295,7 @@ public class PlayerController : MonoBehaviour
 
         coyoteTimeElapsed+=Time.deltaTime;
         #endregion
-
+        previousIsCrouched = isCrouched;
     }//end update
 
 
