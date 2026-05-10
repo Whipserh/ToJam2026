@@ -89,8 +89,8 @@ public class PlayerController : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawCube((Vector2)transform.position + myCollider.offset, myCollider.size);
+        //Gizmos.color = Color.green;
+        //Gizmos.DrawCube((Vector2)transform.position + myCollider.offset, myCollider.size);
     }
 
     private bool respawning = false;
